@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Academic Projects</title><style>
+:root{--ink:#1c1f26;--muted:#5c6370;--bg:#fafafa;--panel:#fff;--line:#e2e4e9;--a:#2746c7;--b:#c8641e;--soft:#a9afba;--grid:#eceef2;--ok:#1a7f4b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eceef2;--muted:#a3a9b5;--bg:#14161b;--panel:#1d2027;--line:#33373f;--a:#8ea4ff;--b:#f0a35e;--soft:#6d7482;--grid:#2b2f37;--ok:#55c78b}}
+:root[data-theme="dark"]{--ink:#eceef2;--muted:#a3a9b5;--bg:#14161b;--panel:#1d2027;--line:#33373f;--a:#8ea4ff;--b:#f0a35e;--soft:#6d7482;--grid:#2b2f37;--ok:#55c78b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px 16px}
+main{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1{font:400 2rem/1.2 Georgia,"Times New Roman",serif;margin:0}
+h2{font-size:1.35rem;font-weight:600;margin:14px 0 0}
+h3{font-size:1.05rem;font-weight:600;margin:0}
+.ctx{color:var(--muted);margin:4px 0 0}
+.take{font-size:1.1rem;margin:10px 0 0;max-width:62rem}
+.back{font-size:.875rem;color:var(--a);text-decoration:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;min-width:0}
+.lab{font-size:.8125rem;color:var(--muted);margin:0}
+.val{font:400 1.75rem/1.25 Georgia,"Times New Roman",serif;margin:4px 0;font-variant-numeric:tabular-nums}
+.sub{font-size:.8125rem;color:var(--muted);margin:0}
+.note{font-size:.8125rem;color:var(--muted);margin:4px 0 12px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:14px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.8125rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.n{text-align:right;white-space:nowrap}
+.ok{color:var(--ok)}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.step{flex:1 1 11rem;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--panel)}
+.step b{display:block;font-size:.875rem}.step span{font-size:.8125rem;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.8125rem;color:var(--muted);margin-bottom:8px}
+.sw{display:inline-block;width:12px;height:8px;border-radius:2px;margin-right:5px}
+svg{display:block;width:100%;height:auto}
+svg text{font:13px system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;fill:var(--muted)}
+figure{margin:0}figure img{width:100%;height:auto;display:block;border-radius:6px;background:#fff}
+a.project{display:block;text-decoration:none;color:inherit}a.project:hover h3{color:var(--a)}
+</style></head><body><main><header><h1>Academic projects</h1><p class="ctx">Yovel Mizrahi. B.Sc. in Industrial Engineering &amp; Management.</p></header>
+<section class="tiles">
+<a class="project card" href="project-monitor/"><h3>Project monitoring dashboard</h3><p class="sub">Critical path and earned value monitoring for a software project.</p></a>
+<a class="project card" href="simulation/"><h3>Supermarket checkout simulation</h3><p class="sub">Arena discrete-event model and Excel Monte Carlo.</p></a>
+<a class="project card" href="data-mining/"><h3>Voting-pattern analysis with PCA</h3><p class="sub">Python dimensionality reduction on election data.</p></a>
+</section></main></body></html>

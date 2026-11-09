@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Voting Pattern PCA</title><style>
+:root{--ink:#1c1f26;--muted:#5c6370;--bg:#fafafa;--panel:#fff;--line:#e2e4e9;--a:#2746c7;--b:#c8641e;--soft:#a9afba;--grid:#eceef2;--ok:#1a7f4b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eceef2;--muted:#a3a9b5;--bg:#14161b;--panel:#1d2027;--line:#33373f;--a:#8ea4ff;--b:#f0a35e;--soft:#6d7482;--grid:#2b2f37;--ok:#55c78b}}
+:root[data-theme="dark"]{--ink:#eceef2;--muted:#a3a9b5;--bg:#14161b;--panel:#1d2027;--line:#33373f;--a:#8ea4ff;--b:#f0a35e;--soft:#6d7482;--grid:#2b2f37;--ok:#55c78b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px 16px}
+main{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1{font:400 2rem/1.2 Georgia,"Times New Roman",serif;margin:0}
+h2{font-size:1.35rem;font-weight:600;margin:14px 0 0}
+h3{font-size:1.05rem;font-weight:600;margin:0}
+.ctx{color:var(--muted);margin:4px 0 0}
+.take{font-size:1.1rem;margin:10px 0 0;max-width:62rem}
+.back{font-size:.875rem;color:var(--a);text-decoration:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;min-width:0}
+.lab{font-size:.8125rem;color:var(--muted);margin:0}
+.val{font:400 1.75rem/1.25 Georgia,"Times New Roman",serif;margin:4px 0;font-variant-numeric:tabular-nums}
+.sub{font-size:.8125rem;color:var(--muted);margin:0}
+.note{font-size:.8125rem;color:var(--muted);margin:4px 0 12px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:14px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.8125rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.n{text-align:right;white-space:nowrap}
+.ok{color:var(--ok)}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.step{flex:1 1 11rem;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--panel)}
+.step b{display:block;font-size:.875rem}.step span{font-size:.8125rem;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.8125rem;color:var(--muted);margin-bottom:8px}
+.sw{display:inline-block;width:12px;height:8px;border-radius:2px;margin-right:5px}
+svg{display:block;width:100%;height:auto}
+svg text{font:13px system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;fill:var(--muted)}
+figure{margin:0}figure img{width:100%;height:auto;display:block;border-radius:6px;background:#fff}
+a.project{display:block;text-decoration:none;color:inherit}a.project:hover h3{color:var(--a)}
+</style></head><body><main><a class="back" href="../">← All projects</a>
+<header><h1>Voting-pattern analysis with PCA</h1>
+<p class="ctx">Data Mining course. Python, pandas, scikit-learn and matplotlib.</p>
+<p class="take">Principal component analysis of two Knesset elections maps parties and localities by how similarly they vote. Z-score standardization kept the most information in two dimensions, and projecting both elections onto the same axes made them directly comparable.</p></header>
+<section class="tiles">
+<div class="card"><p class="lab">Ballot boxes, Knesset 25</p><p class="val">11,707</p><p class="sub">After removing external envelopes</p></div>
+<div class="card"><p class="lab">Ballot boxes, Knesset 24</p><p class="val">12,127</p><p class="sub">After removing external envelopes</p></div>
+<div class="card"><p class="lab">Parties above 1%</p><p class="val">13</p><p class="sub">Kept for the analysis</p></div>
+<div class="card"><p class="lab">Localities compared</p><p class="val">1,211</p><p class="sub">Present in both elections</p></div>
+</section>
+<section><div class="flow">
+<div class="step"><b>Clean</b><span>Remove external envelopes, keep parties above 1%</span></div>
+<div class="step"><b>Transpose</b><span>Parties become observations, ballot boxes become features</span></div>
+<div class="step"><b>Standardize</b><span>Compare no scaling, Min-Max and Z-score</span></div>
+<div class="step"><b>Reduce</b><span>PCA to two and three components</span></div>
+<div class="step"><b>Compare</b><span>Project both elections on axes fitted to the earlier one</span></div>
+</div></section>
+<section class="two">
+<div class="card"><h3>Variance explained by the first two components</h3><p class="note">Knesset 25, ballot-box level. Z-score was selected because it compares relative voting patterns and retained the most variance.</p>
+<div class="legend"><span><i class="sw" style="background:var(--a)"></i>PC1</span><span><i class="sw" style="background:var(--b)"></i>PC2</span></div><svg viewBox="0 0 520 230" role="img" aria-label="Variance explained by scaling method"><line x1="46" x2="512" y1="200.0" y2="200.0" stroke="var(--grid)"/><text x="40" y="204.0" text-anchor="end">0%</text><line x1="46" x2="512" y1="156.0" y2="156.0" stroke="var(--grid)"/><text x="40" y="160.0" text-anchor="end">20%</text><line x1="46" x2="512" y1="112.0" y2="112.0" stroke="var(--grid)"/><text x="40" y="116.0" text-anchor="end">40%</text><line x1="46" x2="512" y1="68.0" y2="68.0" stroke="var(--grid)"/><text x="40" y="72.0" text-anchor="end">60%</text><line x1="46" x2="512" y1="24.0" y2="24.0" stroke="var(--grid)"/><text x="40" y="28.0" text-anchor="end">80%</text><rect x="74.0" y="105.2" width="99.4" height="94.8" fill="var(--a)"><title>No scaling PC1 43.1%</title></rect><rect x="74.0" y="57.4" width="99.4" height="47.7" fill="var(--b)"><title>No scaling PC2 21.7%</title></rect><text x="123.7" y="51.4" text-anchor="middle" style="fill:var(--ink)">64.9%</text><text x="123.7" y="218" text-anchor="middle">No scaling</text><rect x="229.3" y="81.9" width="99.4" height="118.1" fill="var(--a)"><title>Min-Max PC1 53.7%</title></rect><rect x="229.3" y="44.2" width="99.4" height="37.6" fill="var(--b)"><title>Min-Max PC2 17.1%</title></rect><text x="279.0" y="38.2" text-anchor="middle" style="fill:var(--ink)">70.8%</text><text x="279.0" y="218" text-anchor="middle">Min-Max</text><rect x="384.6" y="82.1" width="99.4" height="117.9" fill="var(--a)"><title>Z-score PC1 53.6%</title></rect><rect x="384.6" y="42.5" width="99.4" height="39.6" fill="var(--b)"><title>Z-score PC2 18.0%</title></rect><text x="434.3" y="36.5" text-anchor="middle" style="fill:var(--ink)">71.6%</text><text x="434.3" y="218" text-anchor="middle">Z-score</text></svg></div>
+<div class="card"><h3>What the components show</h3><p class="note">Interpretation from the course report.</p>
+<div class="scroll"><table><thead><tr><th>Component</th><th>Pattern it separates</th></tr></thead><tbody><tr><td>PC1</td><td>Voting patterns of Arab-sector parties against large Jewish-sector parties</td></tr><tr><td>PC2</td><td>Religious and traditional parties against center and left parties</td></tr><tr><td>PC3 (3D model)</td><td>Differences within groups, such as between Haredi parties and other right-wing parties</td></tr></tbody></table></div></div>
+</section>
+<section class="two">
+<div class="card"><h3>Party map, Z-score PCA</h3><p class="note">Knesset 25. Parties that sit close together have similar voting patterns across ballot boxes.</p><figure><img src="img/pca_z_score.jpg" alt="Scatter plot of 13 parties on the first two principal components" loading="lazy"></figure></div>
+<div class="card"><h3>Localities across two elections</h3><p class="note">Fitted on Knesset 24 only. Most localities moved little along PC1, with larger shifts along PC2 in some localities.</p><figure><img src="img/projection_24_25.jpg" alt="Localities projected for Knesset 24 and 25 on the same axes, with arrows between elections" loading="lazy"></figure></div>
+</section>
+</main></body></html>
