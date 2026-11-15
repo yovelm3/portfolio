@@ -1,0 +1,11 @@
+{
+  "demo": true,
+  "note": "Quick start: the shape adjusts the standard measurements of the usual size (cm).",
+  "shapes": {
+    "hourglass": { "name": "Hourglass", "description": "Bust and hips similar, defined waist", "adjustCm": { "bust": 0, "waist": -4, "hips": 1 } },
+    "pear": { "name": "Pear", "description": "Hips wider than bust", "adjustCm": { "bust": -3, "waist": -1, "hips": 5 } },
+    "straight": { "name": "Straight", "description": "Bust, waist and hips similar", "adjustCm": { "bust": -1, "waist": 3, "hips": -2 } },
+    "round": { "name": "Round middle", "description": "Fuller around the waist", "adjustCm": { "bust": 2, "waist": 7, "hips": -1 } },
+    "athletic": { "name": "Athletic", "description": "Broader shoulders and bust, narrower hips", "adjustCm": { "bust": 4, "waist": 1, "hips": -3 } }
+  }
+}

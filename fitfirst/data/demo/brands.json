@@ -1,0 +1,8 @@
+{
+  "demo": true,
+  "brands": {
+    "north": { "name": "Northline", "offsetCm": -3, "note": "Runs about one size small" },
+    "kora": { "name": "Kora Active", "offsetCm": 0, "note": "True to its size chart" },
+    "pulse": { "name": "Pulse & Form", "offsetCm": 3, "note": "Runs about one size large" }
+  }
+}

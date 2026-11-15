@@ -1,0 +1,60 @@
+# Builds and publishes the whole site to GitHub Pages.
+# - Every push and pull request: type-check, run the FitFirst tests and build (a broken build never ships).
+# - Push to main only: publish. The academic pages are copied as-is; FitFirst is built with Vite.
+#   Result: <site>/            portfolio home
+#           <site>/fitfirst/   FitFirst app
+#           <site>/fitfirst/prototype/  the original single-file prototype
+# One-time setup: repository Settings → Pages → Source: "GitHub Actions".
+name: Build and deploy
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: fitfirst
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: fitfirst/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Assemble site
+        working-directory: .
+        run: |
+          mkdir -p _site/fitfirst
+          cp -r index.html project-monitor simulation data-mining _site/
+          cp -r fitfirst/dist/. _site/fitfirst/
+          cp -r fitfirst/prototype _site/fitfirst/prototype
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

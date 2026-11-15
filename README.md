@@ -23,6 +23,10 @@ Python analysis of Knesset 24 and 25 results: data cleaning, exploratory analysi
 
 The scripts expect the election results files in the same folder. These files are not included.
 
+## FitFirst (`fitfirst/`)
+
+Personal project: a mobile-first web app where women who train build a workout look on a mannequin with their own shape, get the right size in every brand, and see the best final price for the whole look. Vite + React + TypeScript, with Vitest tests for the fit and price engines. Demo data only for now. See `fitfirst/README.md`.
+
 ## Live pages
 
-Enable GitHub Pages on this repository to view the results pages.
+The site is built and published by `.github/workflows/pages.yml`. One-time setup: Settings → Pages → Source: "GitHub Actions". After that, every push to `main` publishes the site.

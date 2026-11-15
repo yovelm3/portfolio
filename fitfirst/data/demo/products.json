@@ -1,0 +1,250 @@
+{
+  "demo": true,
+  "note": "Invented products, prices and reviews for the prototype.",
+  "products": [
+    {
+      "id": "b1",
+      "category": "bra",
+      "brand": "north",
+      "name": "Sculpt Longline Bra",
+      "color": "#2F3A56",
+      "stretchCm": 2,
+      "reviews": {
+        "runsSmallPct": 58,
+        "trueToSizePct": 36,
+        "runsLargePct": 6,
+        "count": 412
+      },
+      "offers": [
+        {
+          "retailer": "north_store",
+          "priceUsd": 58
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 52
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 55
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "category": "bra",
+      "brand": "kora",
+      "name": "Flow Everyday Bra",
+      "color": "#9FB596",
+      "stretchCm": 4,
+      "reviews": {
+        "runsSmallPct": 12,
+        "trueToSizePct": 78,
+        "runsLargePct": 10,
+        "count": 1290
+      },
+      "offers": [
+        {
+          "retailer": "kora_store",
+          "priceUsd": 48
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 44
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 46
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "category": "bra",
+      "brand": "pulse",
+      "name": "Studio Cross-Back Bra",
+      "color": "#D9798B",
+      "stretchCm": 2.5,
+      "reviews": {
+        "runsSmallPct": 8,
+        "trueToSizePct": 40,
+        "runsLargePct": 52,
+        "count": 233
+      },
+      "offers": [
+        {
+          "retailer": "pulse_store",
+          "priceUsd": 39
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 34
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "leggings",
+      "brand": "north",
+      "name": "Sculpt 7/8 Legging",
+      "color": "#2F3A56",
+      "stretchCm": 1.5,
+      "cut": "78",
+      "reviews": {
+        "runsSmallPct": 61,
+        "trueToSizePct": 33,
+        "runsLargePct": 6,
+        "count": 988
+      },
+      "offers": [
+        {
+          "retailer": "north_store",
+          "priceUsd": 98
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 89
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 92
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "leggings",
+      "brand": "kora",
+      "name": "Align-Soft High-Rise",
+      "color": "#5E6F57",
+      "stretchCm": 4,
+      "cut": "full",
+      "reviews": {
+        "runsSmallPct": 15,
+        "trueToSizePct": 75,
+        "runsLargePct": 10,
+        "count": 2104
+      },
+      "offers": [
+        {
+          "retailer": "kora_store",
+          "priceUsd": 88
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 84
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "leggings",
+      "brand": "pulse",
+      "name": "Reformer Flare Pant",
+      "color": "#3B3B3B",
+      "stretchCm": 2.5,
+      "cut": "flare",
+      "reviews": {
+        "runsSmallPct": 6,
+        "trueToSizePct": 44,
+        "runsLargePct": 50,
+        "count": 341
+      },
+      "offers": [
+        {
+          "retailer": "pulse_store",
+          "priceUsd": 64
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 58
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 61
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "category": "layer",
+      "brand": "north",
+      "name": "Cropped Studio Jacket",
+      "color": "#AEB9D3",
+      "stretchCm": 1,
+      "style": "zip",
+      "reviews": {
+        "runsSmallPct": 40,
+        "trueToSizePct": 52,
+        "runsLargePct": 8,
+        "count": 187
+      },
+      "offers": [
+        {
+          "retailer": "north_store",
+          "priceUsd": 110
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 99
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "category": "layer",
+      "brand": "kora",
+      "name": "Half-Zip Cloud Pullover",
+      "color": "#E4DCCF",
+      "stretchCm": 4,
+      "relaxed": true,
+      "style": "zip",
+      "reviews": {
+        "runsSmallPct": 10,
+        "trueToSizePct": 70,
+        "runsLargePct": 20,
+        "count": 640
+      },
+      "offers": [
+        {
+          "retailer": "kora_store",
+          "priceUsd": 78
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 72
+        },
+        {
+          "retailer": "activehub",
+          "priceUsd": 74
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "category": "layer",
+      "brand": "pulse",
+      "name": "Wrap Ballet Cardigan",
+      "color": "#E9B9B3",
+      "stretchCm": 3,
+      "relaxed": true,
+      "style": "wrap",
+      "reviews": {
+        "runsSmallPct": 5,
+        "trueToSizePct": 50,
+        "runsLargePct": 45,
+        "count": 122
+      },
+      "offers": [
+        {
+          "retailer": "pulse_store",
+          "priceUsd": 54
+        },
+        {
+          "retailer": "stride",
+          "priceUsd": 49
+        }
+      ]
+    }
+  ]
+}

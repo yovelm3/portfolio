@@ -1,0 +1,11 @@
+{
+  "demo": true,
+  "note": "shippingUsd is charged once per store unless the store subtotal reaches freeOverUsd. brandStore marks a brand's own shop.",
+  "retailers": {
+    "north_store": { "name": "Northline.com", "shippingUsd": 6, "freeOverUsd": 75, "brandStore": "north" },
+    "kora_store": { "name": "KoraActive.com", "shippingUsd": 6, "freeOverUsd": 75, "brandStore": "kora" },
+    "pulse_store": { "name": "PulseForm.com", "shippingUsd": 6, "freeOverUsd": 75, "brandStore": "pulse" },
+    "activehub": { "name": "ActiveHub", "shippingUsd": 8, "freeOverUsd": 100 },
+    "stride": { "name": "StrideMart", "shippingUsd": 5, "freeOverUsd": 60 }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "demo": true,
+  "note": "Invented base chart. Garment mid-point in cm for each size; each brand shifts it by its offset.",
+  "sizes": ["XS", "S", "M", "L", "XL"],
+  "toleranceCm": 2.5,
+  "chart": {
+    "XS": { "underbust": 66, "bust": 80, "waist": 62, "hips": 87 },
+    "S": { "underbust": 70, "bust": 85, "waist": 67, "hips": 92 },
+    "M": { "underbust": 75, "bust": 90, "waist": 72, "hips": 97 },
+    "L": { "underbust": 80, "bust": 96, "waist": 78, "hips": 103 },
+    "XL": { "underbust": 85, "bust": 102, "waist": 84, "hips": 109 }
+  }
+}
