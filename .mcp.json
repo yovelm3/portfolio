@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--browser",
+        "chromium",
+        "--executable-path",
+        "/opt/pw-browsers/chromium",
+        "--no-sandbox"
+      ],
+      "env": {}
+    }
+  }
+}
